@@ -21,7 +21,7 @@ $init = QueryBuilder::startConnection();
 $results = $init->setTable('users')->select('name')->all();
 
 foreach($results as $row):
-  echo $row-name;
+  echo $row->name."<br/>";
 endforeach;
 
 ```
