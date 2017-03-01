@@ -209,6 +209,8 @@ class QueryBuilder
 		try {
 			$this->_statement = $this->_pdo->prepare($this->_query.$this->_wheres.$this->_order.$this->_limit);
 			$this->_statement->execute($this->_params);
+			$this->_params = [];
+			$this->_wheres = '';
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
